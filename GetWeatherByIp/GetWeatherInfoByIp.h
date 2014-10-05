@@ -1,16 +1,23 @@
-GetWeatherByIp
-==============
+//
+//  GetWeatherImage.h
+//  Demo
+//
+//  Created by ian on 14-4-11.
+//  Copyright (c) 2014年 ian. All rights reserved.
+//
 
-通过设备的ip地址确定位置以获得对应的天气信息
+#import <Foundation/Foundation.h>
+@interface GetWeatherInfoByIp : NSObject
 
-1.此库通过链接气象局服务器,获取手机的ip地址,返回城市ID号.
-2.通过城市ID号以及,weather.com.cn的jason接口,获得当前的天气信息.
-3.此库需要导入的框架有:
-MobileCoreServices.framework
-CFNetwork.framework
-SystemConfiguration.framework
-libz.dylib
-4.通过调用以下方法可以获得不同的信息（注：不使用的方法请注释掉）:
+
+@property (nonatomic, strong)NSString *intString;
+@property (nonatomic, strong)UIImage *weatherImage;
+@property (nonatomic, strong)NSString *weatherImageName;
+@property (nonatomic, strong)NSString *weatherState;
+@property (nonatomic, strong)NSString *city;
+@property (nonatomic, strong)NSString *highTemperature;
+@property (nonatomic, strong)NSString *lowTemperature;
+@property (nonatomic, strong)NSString *time;
 
 // 获取当前天气信息的图片
 @property (nonatomic, copy)void(^getWeatherImage)(UIImage *img);
@@ -26,3 +33,5 @@ libz.dylib
 @property (nonatomic, copy)void(^getLowTemperature)(NSString *lowTemperature);
 // 获取此条天气预报发布的时间
 @property (nonatomic, copy)void(^getTime)(NSString *time);
+
+@end
